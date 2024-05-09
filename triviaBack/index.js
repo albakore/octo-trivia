@@ -50,17 +50,9 @@ const inicializar = async () => {
     } catch (error) {
         console.error('Error al inicializar los datos:', error);
     }
-
-    // Iniciar servidor después de inicializar los datos
-    const PORT = process.env.PORT || 8080
-    const server = app.listen(PORT, () => {
-        console.log(`Servidor apiRestful escuchando http://localhost:${PORT}`);
-    });
-
-    server.on('error', error => {
-        console.log(`Error en servidor: ${error.message}`);
-    });
 };
 
 // Inicializar y arrancar el servidor
 inicializar();
+app.listen(3000, () => console.log("Server ready on port 3000."));
+app.on('error', error => console.log(`Error en servidor: ${error.message}`));
