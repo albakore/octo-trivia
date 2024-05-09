@@ -21,11 +21,6 @@ app.use(express.json());
     next();
 }); */
 
-// Rutas
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
-});
-
 // Rutas API RESTful
 const sala1Pregunta1Routes = require('./router/sala1/pregunta1Routes.js');
 const resultado1 = require('./router/sala1/respuestaRoutes.js');
